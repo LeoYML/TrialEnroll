@@ -1,3 +1,6 @@
+## versions
+python 3.10, torch 2.3 
+
 ## ClinicalTrial.gov
 For more information and resources related to HetioNet, visit the:
 [ClinicalTrial.gov](https://clinicaltrials.gov)
@@ -19,12 +22,28 @@ https://github.com/futianfan/clinical-trial-outcome-prediction/tree/main/IQVIA
 
 Rename the file name trial_outcomes_v1.csv to IQVIA_trial_outcomes.csv.
 
-### Initial Setup
-- **Automated Model Training**  
-  The first time you call the enrollment model, the system will automatically train the model. This process takes approximately 3 hours.
-  
-- **Manual Graph Creation**  
-  Alternatively, you can manually train the model by running `python __init__.py` in the command line.
 
-### Model Performance
-AUC: 0.7037358550062651, Accuracy: 0.7689431704885344, Recall: 0.4483221476510067
+### df preprocessing
+cd TrialEnroll/preprocess
+run collect_age.py, collect_location.py, collect_str.py, collect_time.py
+run save_df.py
+
+### LLM generated features preprocessing
+huggingface-cli download --resume-download mistralai/Mistral-7B-Instruct-v0.3 --local-dir 7B-Instruct-v0.3
+set mistral path in llm_request_MistralInstruct.py
+cd TrialEnroll/llm_emb
+create folder data_llm/disease/MistralInstruct, data_llm/drug/MistralInstruct
+run preprocess.py
+run llm_request_MistralInstruct.py
+run embedding.py
+
+### Prepare Criteria embedding
+cd TrialEnroll
+run protocol_encode.py
+
+### run DCN
+run col_preprocessing.py
+run stack_features_dcn.py
+run hatten_cross.py
+
+PR AUC: 0.7015
