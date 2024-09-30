@@ -81,7 +81,7 @@ The model achieved a PR AUC of 0.7015.
 If you use this code, please cite our paper:
 ```
 @article{yue2024trialenroll,
-  title={TrialEnroll: Predicting Clinical Trial Enrollment Success with Deep \& Cross Network and Large Language Models},
+  title={Trialenroll: Predicting clinical trial enrollment success with deep \& cross network and large language models},
   author={Yue, Ling and Xing, Sixue and Chen, Jintai and Fu, Tianfan},
   journal={arXiv preprint arXiv:2407.13115},
   year={2024}
