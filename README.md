@@ -2,6 +2,8 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2407.13115-b31b1b.svg)](https://arxiv.org/abs/2407.13115)
 
+Congratulations! This paper has been accepted at the 2024 ACM-BCB Conference!
+
 ## Overview
 ![TrialEnroll Overview](trialenroll.png)
 
