@@ -89,6 +89,3 @@ If you use this code, please cite our paper:
   year={2024}
 }
 ```
-
-## Contact
-For any questions or issues, please contact [yuel2@rpi.edu].
